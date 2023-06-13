@@ -19,7 +19,7 @@ def position_tensor(beads, N, filesPath):
     path = Path(filesPath)
 
     # Read XYZ files and fetch all the coordinates at all the timesteps
-    xyz_filenames = list(path.rglob("*.xyz"))
+    xyz_filenames = list(sorted(path.rglob("*.xyz")))
 
     xyz_class = mda.coordinates.XYZ.XYZReader(xyz_filenames[0])
 
